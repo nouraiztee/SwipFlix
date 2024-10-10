@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PopularMovieListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
