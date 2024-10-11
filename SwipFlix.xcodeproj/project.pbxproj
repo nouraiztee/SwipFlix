@@ -18,6 +18,10 @@
 		8F3DB3A02CB82228007B7D56 /* SwipFlixUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3DB39F2CB82228007B7D56 /* SwipFlixUITestsLaunchTests.swift */; };
 		8F3DB3B72CB8257C007B7D56 /* MovieListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3DB3B52CB8257C007B7D56 /* MovieListCell.swift */; };
 		8F3DB3B82CB8257C007B7D56 /* MovieListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F3DB3B62CB8257C007B7D56 /* MovieListCell.xib */; };
+		8F3DB3BB2CB8472A007B7D56 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3DB3BA2CB8472A007B7D56 /* Endpoint.swift */; };
+		8F3DB3BD2CB847D3007B7D56 /* SwipFlixRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3DB3BC2CB847D3007B7D56 /* SwipFlixRequestBuilder.swift */; };
+		8F3DB3BF2CB84815007B7D56 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3DB3BE2CB84815007B7D56 /* RequestBuilder.swift */; };
+		8F3DB3C12CB9209C007B7D56 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3DB3C02CB9209C007B7D56 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		8F3DB39F2CB82228007B7D56 /* SwipFlixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipFlixUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8F3DB3B52CB8257C007B7D56 /* MovieListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCell.swift; sourceTree = "<group>"; };
 		8F3DB3B62CB8257C007B7D56 /* MovieListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieListCell.xib; sourceTree = "<group>"; };
+		8F3DB3BA2CB8472A007B7D56 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		8F3DB3BC2CB847D3007B7D56 /* SwipFlixRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipFlixRequestBuilder.swift; sourceTree = "<group>"; };
+		8F3DB3BE2CB84815007B7D56 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		8F3DB3C02CB9209C007B7D56 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,7 @@
 		8F3DB37B2CB82226007B7D56 /* SwipFlix */ = {
 			isa = PBXGroup;
 			children = (
+				8F3DB3B92CB84713007B7D56 /* Network */,
 				8F3DB3AC2CB82318007B7D56 /* Views */,
 				8F3DB3AD2CB8231F007B7D56 /* ViewModels */,
 				8F3DB3AF2CB8233B007B7D56 /* Models */,
@@ -195,6 +204,17 @@
 				8F3DB3B62CB8257C007B7D56 /* MovieListCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		8F3DB3B92CB84713007B7D56 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8F3DB3BA2CB8472A007B7D56 /* Endpoint.swift */,
+				8F3DB3BC2CB847D3007B7D56 /* SwipFlixRequestBuilder.swift */,
+				8F3DB3BE2CB84815007B7D56 /* RequestBuilder.swift */,
+				8F3DB3C02CB9209C007B7D56 /* NetworkService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,10 +349,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F3DB3BF2CB84815007B7D56 /* RequestBuilder.swift in Sources */,
 				8F3DB3812CB82226007B7D56 /* PopularMovieListViewController.swift in Sources */,
+				8F3DB3C12CB9209C007B7D56 /* NetworkService.swift in Sources */,
+				8F3DB3BD2CB847D3007B7D56 /* SwipFlixRequestBuilder.swift in Sources */,
 				8F3DB37D2CB82226007B7D56 /* AppDelegate.swift in Sources */,
 				8F3DB3B72CB8257C007B7D56 /* MovieListCell.swift in Sources */,
 				8F3DB37F2CB82226007B7D56 /* SceneDelegate.swift in Sources */,
+				8F3DB3BB2CB8472A007B7D56 /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
