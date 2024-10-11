@@ -16,7 +16,7 @@ class SwipFlixNetworkService: NetworkService {
     private let urlSession: URLSession
     private let requestBuilder: RequestBuilder
     
-    init(urlSession: URLSession, requestBuilder: RequestBuilder) {
+    init(urlSession: URLSession = .shared, requestBuilder: RequestBuilder) {
         self.urlSession = urlSession
         self.requestBuilder = requestBuilder
     }

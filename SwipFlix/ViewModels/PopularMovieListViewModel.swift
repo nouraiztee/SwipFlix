@@ -13,7 +13,7 @@ class PopularMovieListViewModel {
     var movieList: [Movie] = []
     var reloadData: (() -> Void)?
     
-    init(apiClient: APIClient, movieList: [Movie]) {
+    init(apiClient: APIClient) {
         self.apiClient = apiClient
     }
     
@@ -23,6 +23,8 @@ class PopularMovieListViewModel {
                 let response = try await apiClient.fetchPopularMovies()
                 self.movieList = response ?? []
                 reloadData?()
+            }catch {
+                print(error)
             }
         }
     }
