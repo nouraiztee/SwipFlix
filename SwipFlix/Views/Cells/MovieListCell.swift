@@ -54,6 +54,8 @@ class MovieListCell: UITableViewCell {
         if let imagePath = movie.posterPath {
             let imageURL = "\(Constants.URLs.mediaBaseURL)/\(imagePath)"
             loadImage(from: imageURL)
+        }else {
+            movieAvatar.image = UIImage(named: "ic_pic_unavailable")
         }
         
         movieTitle.text = movie.title ?? ""
@@ -65,10 +67,15 @@ class MovieListCell: UITableViewCell {
     }
     
     private func loadImage(from url: String) {
-        guard let url = URL(string: url) else { return }
+        guard let url = URL(string: url) else { movieAvatar.image = UIImage(named: "ic_pic_unavailable")
+            return
+        }
         
         URLSession.shared.dataTask(with: url) { [weak self] data, response , error in
-            guard let data = data, error == nil else { return }
+            guard let data = data, error == nil else { 
+                self?.movieAvatar.image = UIImage(named: "ic_pic_unavailable")
+                return
+            }
             
             DispatchQueue.main.async {
                 self?.movieAvatar.image = UIImage(data: data)

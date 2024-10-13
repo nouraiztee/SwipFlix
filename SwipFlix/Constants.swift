@@ -16,4 +16,12 @@ struct Constants {
     struct APIKeys {
         static let TMDBKey = "078efff1cfef6fc46746f1bcd10e98d8"
     }
+    
+    struct CellReuseIDs {
+        static let MovieListCellID = "MovieListCell"
+    }
+    
+    struct ViewControllerIDs {
+        static let MovieDetailsViewControllerID = "MovieDetailsViewController"
+    }
 }

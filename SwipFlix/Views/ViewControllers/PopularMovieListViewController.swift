@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import SwiftUI
+
 
 class PopularMovieListViewController: UIViewController {
     
+   
     @IBOutlet weak var movieListTableView: UITableView!
     
     var viewModel: PopularMovieListViewModel!
@@ -39,7 +42,7 @@ class PopularMovieListViewController: UIViewController {
     }
     
     private func setupTableView() {
-        movieListTableView.register(UINib(nibName: "MovieListCell", bundle: nil), forCellReuseIdentifier: "MovieListCell")
+        movieListTableView.register(UINib(nibName: Constants.CellReuseIDs.MovieListCellID, bundle: nil), forCellReuseIdentifier: Constants.CellReuseIDs.MovieListCellID)
         
         tableDataAndEventsHandler.didSelectMovie = { [weak self] movie in
             self?.showMovieDetailView(movie)
@@ -56,7 +59,13 @@ class PopularMovieListViewController: UIViewController {
     private func bindViewModel() {
         viewModel.reloadData = { [weak self] in
             DispatchQueue.main.async {
-                self?.movieListTableView.reloadData()
+                if self?.viewModel.moviesCount == 0 {
+                    self?.showNoContentView()
+                }else {
+                    self?.hideNoContentView()
+                    self?.movieListTableView.reloadData()
+                }
+                
             }
         }
     }
@@ -67,9 +76,20 @@ class PopularMovieListViewController: UIViewController {
             return
         }
         
-        let movieDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "MovieDetailsViewController") as! MovieDetailsViewController
+        let movieDetailVC = self.storyboard?.instantiateViewController(withIdentifier: Constants.ViewControllerIDs.MovieDetailsViewControllerID) as! MovieDetailsViewController
         movieDetailVC.movieId = movieId
         navigationController?.pushViewController(movieDetailVC, animated: true)
+    }
+    
+    private func showNoContentView() {
+        var config = UIContentUnavailableConfiguration.empty()
+        config.text = "Empty!"
+        config.secondaryText = "No popular movies available"
+        self.contentUnavailableConfiguration = config
+    }
+    
+    private func hideNoContentView() {
+        self.contentUnavailableConfiguration = nil
     }
 
 }

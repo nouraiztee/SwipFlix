@@ -33,6 +33,10 @@ class PopularMovieListViewModel {
          movieList[index]
     }
     
+    func isListEmpty() -> Bool {
+        movieList.isEmpty
+    }
+    
     var moviesCount: Int {
          movieList.count
     }

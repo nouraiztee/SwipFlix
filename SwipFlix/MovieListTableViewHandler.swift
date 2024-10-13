@@ -21,7 +21,7 @@ class MovieListTableViewHandler: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieListCell", for: indexPath) as! MovieListCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellReuseIDs.MovieListCellID, for: indexPath) as! MovieListCell
         let movie = viewModel.getMovie(at: indexPath.row)
         
         cell.configure(with: movie)

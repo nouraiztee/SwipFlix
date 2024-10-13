@@ -47,7 +47,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Popular Movies" id="4kX-nT-nFd"/>
                     <connections>
-                        <outlet property="movieListTableView" destination="rRx-yq-rQO" id="rkp-ed-XGQ"/>
+                        <outlet property="movieListTableView" destination="rRx-yq-rQO" id="h9g-uf-9vr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
