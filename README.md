@@ -39,12 +39,12 @@ To run this project, you'll need a TMDB API key. Follow these steps to obtain on
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/movielistingapp.git
+   git clone https://github.com/nouraiztee/movielistingapp.git
    ```
 
 2. Open the project in Xcode:
    ```bash
-   open movielistingapp.xcodeproj
+   open swipflix.xcodeproj
    ```
 
 3. Replace the placeholder API key in the code with your TMDB API key.
