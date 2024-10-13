@@ -1,4 +1,4 @@
-# Movie Listing App
+# SwipFlix
 
 ## Overview
 
