@@ -9,15 +9,30 @@ import Foundation
 import UIKit
 
 class MovieListTableViewHandler: NSObject, UITableViewDataSource {
+    private var viewModel: PopularMovieListViewModel
+    var didSelectMovie: ((Movie) -> Void)?
     
+    init(viewModel: PopularMovieListViewModel) {
+        self.viewModel = viewModel
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        0
+        viewModel.moviesCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieListCell", for: indexPath) as! MovieListCell
+        let movie = viewModel.getMovie(at: indexPath.row)
+        
+        cell.configure(with: movie)
         
         return cell
+    }
+}
+
+extension MovieListTableViewHandler: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedMovie = viewModel.getMovie(at: indexPath.row)
+        didSelectMovie?(selectedMovie)
     }
 }

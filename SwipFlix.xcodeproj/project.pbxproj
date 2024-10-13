@@ -28,6 +28,9 @@
 		8F3DB3C92CB96490007B7D56 /* PopularMovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3DB3C82CB96490007B7D56 /* PopularMovieListViewModel.swift */; };
 		8F3DB3CB2CB964FB007B7D56 /* SwipFlixAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3DB3CA2CB964FB007B7D56 /* SwipFlixAPIClient.swift */; };
 		8F3DB3CD2CB96D32007B7D56 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3DB3CC2CB96D32007B7D56 /* Constants.swift */; };
+		8F3DB3CF2CBBA923007B7D56 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3DB3CE2CBBA923007B7D56 /* MovieDetailsViewController.swift */; };
+		8F3DB3D12CBBB0AB007B7D56 /* MovieDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3DB3D02CBBB0AB007B7D56 /* MovieDetailsViewModel.swift */; };
+		8F3DB3D32CBBB21B007B7D56 /* MovieDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3DB3D22CBBB21B007B7D56 /* MovieDetailsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,9 @@
 		8F3DB3C82CB96490007B7D56 /* PopularMovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieListViewModel.swift; sourceTree = "<group>"; };
 		8F3DB3CA2CB964FB007B7D56 /* SwipFlixAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipFlixAPIClient.swift; sourceTree = "<group>"; };
 		8F3DB3CC2CB96D32007B7D56 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8F3DB3CE2CBBA923007B7D56 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
+		8F3DB3D02CBBB0AB007B7D56 /* MovieDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModel.swift; sourceTree = "<group>"; };
+		8F3DB3D22CBBB21B007B7D56 /* MovieDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				8F3DB3C82CB96490007B7D56 /* PopularMovieListViewModel.swift */,
+				8F3DB3D02CBBB0AB007B7D56 /* MovieDetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -174,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				8F3DB3C42CB9628C007B7D56 /* MovieDataModel.swift */,
+				8F3DB3D22CBBB21B007B7D56 /* MovieDetailsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				8F3DB3802CB82226007B7D56 /* PopularMovieListViewController.swift */,
+				8F3DB3CE2CBBA923007B7D56 /* MovieDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -371,9 +380,12 @@
 				8F3DB3C72CB963CF007B7D56 /* MovieListTableViewHandler.swift in Sources */,
 				8F3DB3BF2CB84815007B7D56 /* RequestBuilder.swift in Sources */,
 				8F3DB3C52CB9628C007B7D56 /* MovieDataModel.swift in Sources */,
+				8F3DB3D32CBBB21B007B7D56 /* MovieDetailsModel.swift in Sources */,
 				8F3DB3812CB82226007B7D56 /* PopularMovieListViewController.swift in Sources */,
+				8F3DB3CF2CBBA923007B7D56 /* MovieDetailsViewController.swift in Sources */,
 				8F3DB3CB2CB964FB007B7D56 /* SwipFlixAPIClient.swift in Sources */,
 				8F3DB3C92CB96490007B7D56 /* PopularMovieListViewModel.swift in Sources */,
+				8F3DB3D12CBBB0AB007B7D56 /* MovieDetailsViewModel.swift in Sources */,
 				8F3DB3C12CB9209C007B7D56 /* NetworkService.swift in Sources */,
 				8F3DB3BD2CB847D3007B7D56 /* SwipFlixRequestBuilder.swift in Sources */,
 				8F3DB37D2CB82226007B7D56 /* AppDelegate.swift in Sources */,

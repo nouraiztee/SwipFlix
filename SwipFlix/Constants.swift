@@ -10,6 +10,7 @@ import Foundation
 struct Constants {
     struct URLs {
         static let baseURL = "https://api.themoviedb.org"
+        static let mediaBaseURL = "https://image.tmdb.org/t/p/w500"
     }
     
     struct APIKeys {

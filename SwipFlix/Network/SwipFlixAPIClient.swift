@@ -9,6 +9,7 @@ import Foundation
 
 protocol APIClient {
     func fetchPopularMovies() async throws -> [Movie]?
+    func fetchMovieDetails(movieId: Int) async throws -> MovieDetailsModel?
 }
 
 class SwipFlixAPIClient: APIClient {
@@ -22,5 +23,11 @@ class SwipFlixAPIClient: APIClient {
         let enpoint = Endpoint.popularMovies
         let response: MovieDataModel = try await networkService.request(enpoint)
         return response.results
+    }
+    
+    func fetchMovieDetails(movieId: Int) async throws -> MovieDetailsModel? {
+        let endpoint = Endpoint.movieDetails(movieId: movieId)
+        let response: MovieDetailsModel = try await networkService.request(endpoint)
+        return response
     }
 }

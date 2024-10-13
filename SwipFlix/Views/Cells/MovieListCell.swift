@@ -37,4 +37,43 @@ class MovieListCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func configure(with movie: Movie) {
+        movieLanguageView.isHidden = (movie.originalLanguage?.isEmpty ?? true) ? true : false
+        movieReleaseDateView.isHidden = (movie.releaseDate?.isEmpty ?? true) ? true : false
+        movieMaturityRatingView.isHidden = (movie.voteAverage == nil ) ? true : false
+        
+        movieLanguageView.layer.borderWidth = 0.5
+        movieLanguageView.layer.borderColor = UIColor.lightGray.cgColor
+        
+        movieReleaseDateView.layer.borderWidth = 0.5
+        movieReleaseDateView.layer.borderColor = UIColor.lightGray.cgColor
+        
+        movieMaturityRatingView.layer.borderWidth = 0.5
+        movieMaturityRatingView.layer.borderColor = UIColor.lightGray.cgColor
+        
+        if let imagePath = movie.posterPath {
+            let imageURL = "\(Constants.URLs.mediaBaseURL)/\(imagePath)"
+            loadImage(from: imageURL)
+        }
+        
+        movieTitle.text = movie.title ?? ""
+        movieLanguageLabel.text = movie.originalLanguage?.capitalized ?? "N/A"
+        movieReleaseDateLabel.text = movie.releaseDate?.components(separatedBy: "-").first ?? "N/A"
+        movieMaturityRatingLabel.text = (movie.adult ?? false) ? "18+" : "All"
+        movieRatingLabel.text = "\(Int((movie.voteAverage ?? 0) * 10))%"
+        
+    }
+    
+    private func loadImage(from url: String) {
+        guard let url = URL(string: url) else { return }
+        
+        URLSession.shared.dataTask(with: url) { [weak self] data, response , error in
+            guard let data = data, error == nil else { return }
+            
+            DispatchQueue.main.async {
+                self?.movieAvatar.image = UIImage(data: data)
+            }
+        }.resume()
+    }
+    
 }
